@@ -27,7 +27,7 @@ slope = round((max_height - min_height) / slide_count, 2)
 table = doc.add_table(rows=1, cols=4)
 
 data = [
-    ('Sipariş No:', order_no, 'Taban Genişliği:', width),
+    ('Föy No:', order_no, 'En:', width),
     ('Uzun Kenar:', max_height, 'Kısa Kenar:', min_height),
     ('Slayt Genişliği:', slide_width, 'Kalan Genişlik:', final_slide_with),
     ('Slayt Sayısı:', round(slide_count, 2), 'Slope Farkı:', slope)
@@ -44,7 +44,7 @@ doc.add_paragraph('')
 doc.add_paragraph('Slayt Yükseklikleri:')
 
 for i in range(int(slide_count)):
-    doc.add_paragraph(f'{i + 1}. Slayt: {round(final_max_height, 1)}')
+    doc.add_paragraph(f'{i + 1}. Slayt: {round(final_max_height + 6.2, 2)}')
     final_max_height -= slope
 
 # Save the document at the specified path
